@@ -1,5 +1,5 @@
 A neumorphism design experiment.
-[https://hannemaes.github.io/Neumorphist-Dropzone/](hhttps://hannemaes.github.io/Neumorphist-Dropzone/)
+[https://hannemaes.github.io/Neumorphist-Dropzone/](https://hannemaes.github.io/Neumorphist-Dropzone/)
 
 <img width="666px" height="663px" src="assets/screencap.gif">
 
