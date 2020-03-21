@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css?family=Vibur&display=swap');
+
+:root {
+  --speedFadeIn: 2s;
+  --speedHover: 0.3ms;
+   
+  --colorText: rgb(200, 200, 200);
+  --colorTextAccent: rgb(134, 134,134);
+  --colorBackground: rgb(240, 240, 240);
+}
+
+/*transition: box-shadow 0.3s ease-in-out;*/
+
+body {
+  background-color: var(--colorBackground);
+  color: var(--colorBackground); /* because all text will fad ein */
+  
+  font-family: Vibur;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+section {
+  text-align: center;
+}
+
+/* typography */
+
+h1, footer {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+h1 {
+  font-size: 35px;
+  animation: fadeH1 var(--speedFadeIn) ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeH1 {
+  0% { 
+    color: var(--colorBackground);
+    text-shadow: 0px 0px 0px var(--colorBackground);
+  } 50% {
+    color: var(--colorBackground);
+  } 100% {
+    color: var(--colorText);
+    text-shadow: 14px 14px 7px rgba(0, 0, 0, 0.10);
+  }
+}
+
+footer {
+  font-size: 25px;
+  animation: fadeFooter var(--speedFadeIn) ease-in-out;
+  animation-fill-mode: forwards;
+}
+  
+ @keyframes fadeFooter {
+  0% { 
+    color: var(--colorBackground);
+    text-shadow: 0px 0px 10px var(--colorBackground);
+  } 50% {
+    color: var(--colorBackground);
+  } 100% { 
+    color: var(--colorText);
+    text-shadow: 14px 14px 5px rgba(0, 0, 0, 0.10);
+  }
+}
+
+/* dropzone */
+
+.dropzone {
+  width: 371px;
+  height: 371px;
+  border-radius: 50px;
+  cursor: pointer;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  animation: dropzoneFade var(--speedFadeIn) ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.dropzone:hover {
+  animation: dropzoneHover var(--speedHover) ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.dropzone:hover .dropzoneText {
+  animation: fadeDropzoneTextHover var(--speedFadeIn) ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dropzoneHover {
+  0% { 
+    box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1), 
+                -20px -20px 40px #FFFFFF;
+  } 50% { 
+    box-shadow: none; 
+  } 100% { 
+    box-shadow: inset 20px 20px 80px rgba(0, 0, 0, 0.1), 
+                inset -20px -20px 40px #FFFFFF;
+  }
+}
+
+@keyframes dropzoneFade {
+  from { 
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1), 
+                0px 0px 0px #FFFFFF;
+  } to { 
+    box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1), 
+                -20px -20px 40px #FFFFFF;
+  }
+}
+
+.dropzoneText {
+  font-size: 40px;
+  animation: fadeDropzoneText var(--speedFadeIn) ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeDropzoneText {
+  0% { 
+    color: var(--colorBackground);
+    text-shadow: 0px 0px 0px var(--colorBackground);
+  } 50% {
+    color: var(--colorBackground);
+  } 100% {
+    color: var(--colorTextAccent);
+    text-shadow: 10px 10px 5px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@keyframes fadeDropzoneTextHover {
+  0% { 
+    color: var(--colorTextAccent);
+    text-shadow: 10px 10px 5px rgba(0, 0, 0, 0.1);
+  } 100% {
+    color: var(--colorTextAccent);
+    text-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
+  }
+}
